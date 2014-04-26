@@ -40,15 +40,24 @@ def template():
 def generate():
 	""" """
 	error = None
+	error1 = None
 	print "Ok I get it ...\n"
 	if request.method == 'POST':
-		name = request.form['name']
-		print "Name = %s" % name
-		print "size = %d" % len(name)
-		if name is None or name =="":
-			error = 'Invalid name'
-	print "error %s" % error
-	return render_template('template.html', error=error)
+		form = request.form['name']
+		if request.form['form'] == "form1":
+			name = request.form['name']
+			print "Name = %s" % name
+			print "size = %d" % len(name)
+			if name is None or name =="":
+				error = 'Invalid name'
+		print "error %s" % error
+		if request.form['form'] == "form2":
+			pass
+		if error != None:
+			return render_template('template.html', error=error)
+		if error1 != None :
+			return render_template('template.html', error=error1)
+
 @app.route('/manage')
 def manage():
 	return "0"
