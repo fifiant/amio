@@ -17,33 +17,33 @@
 <div align="center">
 	<pre style="margin: 0; line-height: 150%">
 		{% if error %}<div class=error><strong>Error:</strong> {{ error }}</div>{% endif %}
-		<form id="choose" action="" method="GET">
+		<form id="choose" action="/generate" method="POST">
 			<table>
 				<tr>
 					<td>Virtualbox name :</td>
-					<td><input type=text name="name" value="{{ request.form.name }}"></input></td>
+					<td><input type=text name=name size=30 value="{{ request.form.name }}"></input></td>
 				</tr>
 				<tr>
 					<td>Host name: </td>
-					<td><input type=text name="hostname" value="{{ request.form.hostname }}"></input></td>
+					<td><input type=text name="hostname" size=30 value="{{ request.form.hostname }}"></input></td>
 				</tr>
 				<tr>
 					<td>IP adress:</td>
-					<td><input type=text name="ipadress" value="{{ request.form.ipadress }}"></input></td>
+					<td><input type=text name="ipadress" size=30 value="{{ request.form.ipadress }}"></input></td>
 				</tr>
 				<tr>
 					<td>Mac Adress</td>
-					<td><input id="macadress" name="macadress" value="{{ request.form.macadress }}"></input></td>
+					<td><input type=text name="macadress" size=30 value="{{ request.form.macadress }}"></input></td>
 				</tr>
 				<tr>
 					<td>Memory</td>
-					<td><input type=text name="memory" value="{{ request.form.memory }}"></input></td>
+					<td><input type=text name="memory" size=30 value="{{ request.form.memory }}"></input></td>
 				</tr>
 				<tr>
 					<td>CPU</td>
-					<td><input type=text name="cpu" value="{{ request.form.cpu }}"></input></td>
+					<td><input type=text name="cpu" size=30 value="{{ request.form.cpu }}"></input></td>
 				</tr>
-				<tr>
+				<tr>	
 					<td clospan="2"><input type="submit" /></td>
 				</tr>
 			</table>

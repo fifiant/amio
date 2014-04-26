@@ -36,6 +36,19 @@ def template():
 	""" Render the website's Vagrant templates."""
 	return render_template('template.html')
 
+@app.route('/generate', methods=['POST'])
+def generate():
+	""" """
+	error = None
+	print "Ok I get it ...\n"
+	if request.method == 'POST':
+		name = request.form['name']
+		print "Name = %s" % name
+		print "size = %d" % len(name)
+		if name is None or name =="":
+			error = 'Invalid name'
+	print "error %s" % error
+	return render_template('template.html', error=error)
 @app.route('/manage')
 def manage():
 	return "0"
