@@ -5,4 +5,53 @@
 {% endblock %}
 
 {% block main %}
+<br/><br/><br/><br/><br/>
+<div class="container theme-showcase maintext">
+	  <div class="page-header" id="articles">
+        <h1><b>Generate Vagrant Configuration file</b></h1>
+    </div>
+<div align="center">
+</div>
+<p> <h2><b>Basic machine:</b></h2> </p>
+
+<div align="center">
+	<pre style="margin: 0; line-height: 150%">
+		{% if error %}<div class=error><strong>Error:</strong> {{ error }}</div>{% endif %}
+		<form id="choose" action="" method="GET">
+			<table>
+				<tr>
+					<td>Virtualbox name :</td>
+					<td><input type=text name="name" value="{{ request.form.name }}"></input></td>
+				</tr>
+				<tr>
+					<td>Host name: </td>
+					<td><input type=text name="hostname" value="{{ request.form.hostname }}"></input></td>
+				</tr>
+				<tr>
+					<td>IP adress:</td>
+					<td><input type=text name="ipadress" value="{{ request.form.ipadress }}"></input></td>
+				</tr>
+				<tr>
+					<td>Mac Adress</td>
+					<td><input id="macadress" name="macadress" value="{{ request.form.macadress }}"></input></td>
+				</tr>
+				<tr>
+					<td>Memory</td>
+					<td><input type=text name="memory" value="{{ request.form.memory }}"></input></td>
+				</tr>
+				<tr>
+					<td>CPU</td>
+					<td><input type=text name="cpu" value="{{ request.form.cpu }}"></input></td>
+				</tr>
+				<tr>
+					<td clospan="2"><input type="submit" /></td>
+				</tr>
+			</table>
+    	</form>
+	</pre> 
+</div>
+<p> <h2><b>Open Stack machines:</b></h2> </p>
+<div align="center">
+	<pre style="margin: 0; line-height: 150%">Development environment is very important in the daily work of a developer, architect. The establishment of such infrastructure can sometimes be difficult and sometimes recurrent depending on the project. The developer must be able to have an easy and ready to use for the implementation of its environment.<br/> In this article, I will introduce you <a href="#">AMIO</a>, a REST API that allows you to easily build your development environment.</pre> 
+</div>
 {% endblock %}
