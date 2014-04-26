@@ -14,8 +14,8 @@ Prerequisites
 
 	or install dmg here : https://www.virtualbox.org/wiki/Downloads
 
-Install
-=======
+Installation
+============
 
 	$ python bootstrap.py
 	$ bin/buildout
