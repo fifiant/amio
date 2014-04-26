@@ -6,26 +6,30 @@ Easy way to build your own developement environment
 Prerequisites
 =============
 
-:: Linux
-$ sudo apt-get install virtualbox rubygems
+	:: Linux
+	$ sudo apt-get install virtualbox rubygems
 
-:: Mac OS X
-$ brew install 
+	:: Mac OS X
+	$ brew install 
 
-or install dmg here : https://www.virtualbox.org/wiki/Downloads
+	or install dmg here : https://www.virtualbox.org/wiki/Downloads
 
 Install
 =======
 
-$ python bootstrap.py
-$ bin/buildout
+	$ python bootstrap.py
+	$ bin/buildout
 
 Start the machine
 ==================
 
-$ vagrant up
+	$ vagrant up
 
 Setup the machine
 =================
 
-$ bin/fab vagrant install
+	$ bin/fab vagrant install
+
+Run the machine
+===============
+	$ ip_adresse:3000
