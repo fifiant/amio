@@ -31,6 +31,10 @@ def about():
 	 """Render the website's about page."""
 	 return render_template('about.html')
 
+@app.route('/template')
+def template():
+	""" Render the website's Vagrant templates."""
+	return render_template('template.html')
 
 @app.route('/manage')
 def manage():
