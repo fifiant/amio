@@ -43,6 +43,10 @@
 					<td>CPU</td>
 					<td>: <input type="text" name="cpu" size=30 value="{{ request.form.cpu }}"></input></td>
 				</tr>
+				<tr>
+					<td>Number of intances</td>
+					<td>: <input type="text" name="intance" size=30 value="{{ request.form.instance }}"></input></td>					
+				</tr>				
 				<tr>	
 					<td clospan="2"><input type="submit" value="generate"/> <input type="hidden" name ="form" value="form1"></td>
 				</tr>
@@ -64,37 +68,43 @@
 					<td>Virtualbox name</td>
 					<td>: <input type="text" name=name size=30 value="{{ request.form.name }}"></input></td>
 					<td>&nbsp; Virtualbox name</td>
-					<td>: <input type="text" name=name size=30 value="{{ request.form.name }}"></input></td>
+					<td>: <input type="text" name=name size=30 value="{{ request.form.name1 }}"></input></td>
 				</tr>
 				<tr>
 					<td>Host name</td>
 					<td>: <input type="text" name="hostname" size=30 value="{{ request.form.hostname }}"></input></td>
 					<td>&nbsp; Host name</td>
-					<td>: <input type="text" name="hostname" size=30 value="{{ request.form.hostname }}"></input></td>					
+					<td>: <input type="text" name="hostname1" size=30 value="{{ request.form.hostname1 }}"></input></td>					
 				</tr>
 				<tr>
 					<td>IP adress</td>
 					<td>: <input type="text" name="ipadress" size=30 value="{{ request.form.ipadress }}"></input></td>
 					<td>&nbsp; IP adress</td>
-					<td>: <input type=text name="ipadress" size=30 value="{{ request.form.ipadress }}"></input></td>					
+					<td>: <input type=text name="ipadress1" size=30 value="{{ request.form.ipadress1 }}"></input></td>					
 				</tr>
 				<tr>
 					<td>Mac Adress</td>
 					<td>: <input type="text" name="macadress" size=30 value="{{ request.form.macadress }}"></input></td>
 					<td>&nbsp; Mac Adress</td>
-					<td>: <input type="text" name="macadress" size=30 value="{{ request.form.macadress }}"></input></td>					
+					<td>: <input type="text" name="macadress1" size=30 value="{{ request.form.macadress1 }}"></input></td>					
 				</tr>
 				<tr>
 					<td>Memory</td>
-					<td>: <input type="text" name="memory" size=30 value="{{ request.form.memory }}"></input></td>
+					<td>: <input type="text" name="memory" size=30 value="{{ request.form.memory1 }}"></input></td>
 					<td>&nbsp; Memory</td>
-					<td>: <input type=text name="memory" size=30 value="{{ request.form.memory }}"></input></td>					
+					<td>: <input type=text name="memory1" size=30 value="{{ request.form.memory1 }}"></input></td>					
 				</tr>
 				<tr>
 					<td>CPU</td>
 					<td>: <input type="text" name="cpu" size=30 value="{{ request.form.cpu }}"></input></td>
 					<td>&nbsp; CPU</td>
-					<td>: <input type="text" name="cpu" size=30 value="{{ request.form.cpu }}"></input></td>					
+					<td>: <input type="text" name="cpu1" size=30 value="{{ request.form.cpu1 }}"></input></td>					
+				</tr>
+				<tr>
+					<td>Number of intances</td>
+					<td>: <input type="text" name="intance" size=30 value="{{ request.form.instance }}"></input></td>
+					<td>&nbsp; Number of intances</td>
+					<td>: <input type="text" name="intance1" size=30 value="{{ request.form.intance }}"></input></td>					
 				</tr>
 				<tr>	
 					<td clospan="4" align="center"><input type="submit" value="generate"/> <input type="hidden" name ="form" value="form2"></td>
