@@ -86,7 +86,8 @@ def generate():
 				data['instance'] = instance
 				# Generate config
 				generateConfig(instance, data)
-				return render_template('template.html', error=error)
+				return redirect(url_for('template'))
+				#return render_template('template.html', error=error)
 		if request.form['form'] == "form2":
 			pass
 		if error != None:
