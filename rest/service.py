@@ -18,7 +18,7 @@ __all__ = ['AMIO']
 
 
 from flask import Flask, render_template, request, redirect, url_for
-
+import yaml
 app = Flask(__name__)
 	
 @app.route('/')
@@ -41,22 +41,58 @@ def generate():
 	""" """
 	error = None
 	error1 = None
+	data = {}
 	print "Ok I get it ...\n"
+	print "REST method  = %s" % request.method
 	if request.method == 'POST':
-		form = request.form['name']
-		if request.form['form'] == "form1":
+		form = request.form['form']
+		print "Form == %s"  % form
+		if form == "form1":
 			name = request.form['name']
+			hostname = request.form['hostname']
+			ipadress = request.form['ipadress']
+			macadress = request.form['macadress']
+			memory = request.form['memory']
+			cpu = request.form['cpu']
+			instance = request.form['instance']
 			print "Name = %s" % name
 			print "size = %d" % len(name)
 			if name is None or name =="":
-				error = 'Invalid name'
-		print "error %s" % error
+				error = "You have to enter a machine name"
+			elif hostname is None or hostname=="":
+				print "Error1 : %s" % error
+				error = str(error) + "You have to enter a hostname"
+				print "Error : %s" % error
+			elif ipadress is None or ipadress=="":
+				error = error + 'You have to enter a ipadress'
+			elif macadress is None or macadress =="":
+				error = error + 'You have to enter a macadress'
+			elif memory is None or memory == "":
+				error = error + 'You have to enter a memory size'
+			elif cpu is None or cpu =="":
+				error = error + 'You have to enter a cpu'
+			elif instance is None or instance =="":
+				error = error+ 'You have to enter a instance number'
+			else:
+				data['name'] = name
+				data['hostname'] = hostname
+				data['ipadress'] = ipadress
+				data['macadress'] = macadress
+				data['memory'] = memory
+				data['cpu'] = cpu
+				data['instance'] = instance
+				# Generate config
+				generateConfig(instance, data)
+				return render_template('template.html', error=error1)
 		if request.form['form'] == "form2":
 			pass
 		if error != None:
 			return render_template('template.html', error=error)
 		if error1 != None :
 			return render_template('template.html', error=error1)
+	else:
+		print "Bad request == %s" % request.method
+	return render_template('template.html', error=error1)
 
 @app.route('/manage')
 def manage():
@@ -66,6 +102,9 @@ def manage():
 def page_not_found(error):
 	 """Custom 404 page."""
 	 return render_template('404.html'), 404
-
+# Utils 
+def generateConfig(instance, data):
+	with open('config.yml', 'w') as outfile:
+		outfile.write( yaml.dump(data, default_flow_style=False) )
 if __name__ == '__main__':
 	app.run(debug=True) # rune the application
