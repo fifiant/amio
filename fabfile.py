@@ -177,12 +177,12 @@ environment=GEM_HOME='/home/redmine/gem',RUBYLIB='/home/redmine/lib',RAILS_ENV='
         '/etc/apache2/sites-available/redmine.conf',
         """\
 <VirtualHost *:80>
-    ServerName redmine.example.com
+    ServerName redmine.fifiant.com
 
-    Redirect / https://redmine.example.com/
+    Redirect / https://redmine.fifiant.com/
 </VirtualHost>
 <VirtualHost *:443>
-    ServerName redmine.example.com
+    ServerName redmine.fifiant.com
 
     DocumentRoot /home/redmine/redmine/public/
 
