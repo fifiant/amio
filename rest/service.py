@@ -17,8 +17,11 @@ __copyright__ = '(c) 2014 by Fawaz PARAISO'
 __all__ = ['AMIO']
 
 
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 import yaml
+
+# App config.
+SECRET_KEY = '87469976308fd14a2d0148247d441f2756b6176a'
 app = Flask(__name__)
 	
 @app.route('/')
@@ -83,7 +86,7 @@ def generate():
 				data['instance'] = instance
 				# Generate config
 				generateConfig(instance, data)
-				return render_template('template.html', error=error1)
+				return render_template('template.html', error=error)
 		if request.form['form'] == "form2":
 			pass
 		if error != None:
