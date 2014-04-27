@@ -1,7 +1,3 @@
-cpu: !!python/unicode '2'
-hostname: !!python/unicode 'controller.amio.com'
-instance: !!python/unicode '2'
-ipadress: !!python/unicode '192.168.0.2'
-macadress: !!python/unicode '0800274a508c'
-memory: !!python/unicode '1024'
-name: !!python/unicode 'controller'
+'{''macadress'': u''0800274a508c'', ''name'': u''controller'', ''instance'': u''2'',
+  ''hostname'': u''controller.amio.com'', ''ipadress'': u''192.168.0.2'', ''memory'':
+  u''1024'', ''cpu'': u''2''}'
