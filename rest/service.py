@@ -45,8 +45,6 @@ def generate():
 	error = None
 	error1 = None
 	data = {}
-	print "Ok I get it ...\n"
-	print "REST method  = %s" % request.method
 	if request.method == 'POST':
 		form = request.form['form']
 		print "Form == %s"  % form
@@ -58,24 +56,21 @@ def generate():
 			memory = request.form['memory']
 			cpu = request.form['cpu']
 			instance = request.form['instance']
-			print "Name = %s" % name
-			print "size = %d" % len(name)
 			if name is None or name =="":
-				error = "You have to enter a machine name"
+				error = 'You have to enter a machine name'
 			elif hostname is None or hostname=="":
-				print "Error1 : %s" % error
-				error = str(error) + "You have to enter a hostname"
+				error = 'You have to enter a hostname'
 				print "Error : %s" % error
 			elif ipadress is None or ipadress=="":
-				error = error + 'You have to enter a ipadress'
+				error = 'You have to enter a ipadress'
 			elif macadress is None or macadress =="":
-				error = error + 'You have to enter a macadress'
+				error = 'You have to enter a macadress'
 			elif memory is None or memory == "":
-				error = error + 'You have to enter a memory size'
+				error = 'You have to enter a memory size'
 			elif cpu is None or cpu =="":
-				error = error + 'You have to enter a cpu'
+				error = 'You have to enter a cpu'
 			elif instance is None or instance =="":
-				error = error+ 'You have to enter a instance number'
+				error = 'You have to enter a instance number'
 			else:
 				data['name'] = name
 				data['hostname'] = hostname
